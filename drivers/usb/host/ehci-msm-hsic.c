@@ -1181,9 +1181,9 @@ static struct notifier_block usbdev_nb = {
 
 static void ehci_msm_set_autosuspend_delay(struct usb_device *dev) {
 	if (!dev->parent)
-		pm_runtime_set_autosuspend_delay(&dev->dev, 75);
+		pm_runtime_set_autosuspend_delay(&dev->dev, 40);
 	else
-		pm_runtime_set_autosuspend_delay(&dev->dev, 275);
+		pm_runtime_set_autosuspend_delay(&dev->dev, 200);
 }
 
 static struct hc_driver msm_hsic_driver = {

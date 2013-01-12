@@ -1995,7 +1995,7 @@ static struct msm_thermal_data msm_thermal_pdata = {
 #ifdef CONFIG_MACH_LGE //sync with thermald-8064.conf's temperature. actually 60'C is too low to degrate CPU freqency to 918MHz
 	.limit_temp = 93, //later carefully tune it
 #else
-	.limit_temp = 60,
+	.limit_temp = 80,
 #endif
 	.temp_hysteresis = 10,
 	.limit_freq = 918000,

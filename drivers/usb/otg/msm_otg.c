@@ -61,6 +61,9 @@
 #include "../../../sound/soc/codecs/wcd9310.h"
 #endif /*CONFIG_LGE_AUX_NOISE*/
 
+bool fast_charge = false;
+module_param(fast_charge, bool, 0775);
+
 #define MSM_USB_BASE	(motg->regs)
 #define DRIVER_NAME	"msm_otg"
 
@@ -1104,6 +1107,9 @@ static void msm_otg_notify_charger(struct msm_otg *motg, unsigned mA)
 
 	if (motg->cur_power == mA)
 		return;
+		
+	if (fast_charge)
+		mA = 1000;
 
 	dev_info(motg->otg.dev, "Avail curr from USB = %u\n", mA);
 

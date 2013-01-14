@@ -79,3 +79,11 @@ GTAGS
 *.orig
 *~
 \#*#
+
+# other autogenned files
+arch/arm/mach-msm/smd_rpc_sym.c
+
+#
+# Generated build output
+#
+arch/arm/mach-msm/smd_rpc_sym.c
